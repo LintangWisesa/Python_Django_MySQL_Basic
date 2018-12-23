@@ -1,0 +1,42 @@
+
+1. menjalankan server
+    $ python manage.py runserver
+
+    * server akan jalan di http://127.0.0.1:8000
+      buka di browser: localhost:8000
+
+2. menghubungkan ke database mysql
+    $ pip install mysqlclient
+
+    * masuk ke settings.py, cari bagian database. komen lines di bawah
+
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+
+    * ketik lines berikut
+
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'nama_database',
+                'USER': 'root',
+                'PASSWORD': '12345',
+                'HOST': 'localhost',
+                'PORT': ''
+            }
+        }
+
+================================================================
+
+MANAGE ADMIN
+
+3. run server, go to localhost:8000/ADMIN
+   akan muncul halaman login admin
+   pastikan sudah terhubung ke database!
+
+4. create superuser
+    $ python manage.py createsuperuser --username=lintang --email=lintang@ymail.com

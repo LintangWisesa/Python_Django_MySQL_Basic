@@ -1,0 +1,24 @@
+
+1. Pastikan Python & pip sudah terinstal, cek via terminal:
+    $ python --version
+    $ pip --version
+
+2. install virtualenvwrapper:
+    $ pip install virtualenvwrapper-win
+
+3. go to your folder project & create virtual environment
+    $ cd/D:/your_project_folder
+    $ mkvirtualenv lin1
+
+    jika dalam 1 folder, ada > 1 virtual env, kita bisa pindah2:
+    $ workon lin1
+    $ workon lin2
+    $ workon lin3
+
+4. on your env, install django:
+    $ pip install django
+
+5. generate a project
+    $ django-admin startproject lin_django
+    
+    * akan muncul folder lin_django, buka via code editor!
