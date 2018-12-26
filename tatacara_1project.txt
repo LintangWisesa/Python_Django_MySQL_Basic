@@ -55,9 +55,16 @@
 
 MANAGE ADMIN
 
-3. run server, go to localhost:8000/ADMIN
-   akan muncul halaman login admin
-   pastikan sudah terhubung ke database!
+3. create superuser utk login admin!
+    $ python manage.py createsuperuser --username=lintang --email=lintang@lintang.com
 
-4. create superuser
-    $ python manage.py createsuperuser --username=lintang --email=lintang@ymail.com
+    lalu inputkan password, misal: lintang123
+    superuser created successfully!
+
+4. run server & coba login, 
+    $ python manage.py runserver
+
+   go to localhost:8000/ADMIN
+   akan muncul halaman login admin
+   pastikan sudah terhubung ke databases
+   cobalah login dg data superuser!
