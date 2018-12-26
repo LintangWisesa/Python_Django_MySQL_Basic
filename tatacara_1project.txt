@@ -6,7 +6,17 @@
       buka di browser: localhost:8000
 
 2. menghubungkan ke database mysql
-    $ pip install mysqlclient
+
+    Open terminal, aktifkan mysql 
+        $ cd C:\Program Files\MySQL\MySQL Server 8.0\bin 
+        $ mysql.exe -u lintang -p12345      // u = user  p = password
+
+    lalu buat database utk dikoneksikan ke django, misal: 'lin_django'
+        $ show databases;
+        $ create database lin_django;
+
+    Masuk ke terminal project django, install mysql:
+        $ pip install mysqlclient
 
     * masuk ke settings.py, cari bagian database. komen lines di bawah
 
@@ -17,18 +27,29 @@
             }
         }
 
-    * ketik lines berikut
+    * ketik lines berikut utk set database ke mysql
+        ** 'django.db.backends.postgresql'
+        ** 'django.db.backends.mysql'
+        ** 'django.db.backends.sqlite3'
+        ** 'django.db.backends.oracle'
 
         DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.mysql',
-                'NAME': 'nama_database',
+                'NAME': 'lin_django',
                 'USER': 'root',
                 'PASSWORD': '12345',
                 'HOST': 'localhost',
                 'PORT': ''
             }
         }
+
+    setelah setup database selesai, jalankan script:
+        $ python manage.py migrate
+
+    lihat table di database lin_django, akan muncul banyak table default django
+        $ use lin_django;
+        $ show tables;
 
 ================================================================
 
