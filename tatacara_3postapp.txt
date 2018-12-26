@@ -38,3 +38,17 @@
 
 6. run server!
     $ python manage.py runserver
+
+//////////////////////////////////////////////////
+
+7. custom view with html file!
+    go to posts/views.py & write there:
+
+        from django.shortcuts import render
+        from django.http import HttpResponse
+
+        def index(request):
+            return render(request, 'posts/index.html')
+
+8. go to posts dir, create folder templates/posts/index.html!
+    <h1>Test</h1>
