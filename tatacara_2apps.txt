@@ -1,0 +1,40 @@
+
+1. create apps
+    $ python manage.py startapp lin_app
+
+2. Open the lin_app/views.py and put the following Python code in it:
+
+        from django.http import HttpResponse
+
+        def index(request):
+            return HttpResponse("Selamat datang!")
+
+3. This is the simplest view possible in Django. 
+    To call the view, we need to map it to a URL, and for this we need a URLconf.
+    To create a URLconf in the polls directory, create a file called urls.py.
+    In the lin_app/urls.py file include the following code:
+
+        from django.urls import path
+
+        from . import views
+
+        urlpatterns = [
+            path('', views.index, name='index'),
+        ]
+
+4. The next step is to point the root URLconf at the polls.urls module. 
+    In lin_django/urls.py, add an import for django.urls.include and insert an include() 
+    in the urlpatterns list, so you have:
+
+        from django.contrib import admin
+        from django.urls import include, path
+
+        urlpatterns = [
+            path('lin_app/', include('lin_app.urls')),
+            path('admin/', admin.site.urls),
+        ]
+
+5. run server!
+    $ python manage.py runserver
+
+    try to open localhost:8000/admin & localhost:8000/lin_app

@@ -1,9 +1,11 @@
 
 1. menjalankan server
     $ python manage.py runserver
-
     * server akan jalan di http://127.0.0.1:8000
       buka di browser: localhost:8000
+    
+    $ python manage.py runserver 8080
+    * server akan jalan di port 8080
 
 2. menghubungkan ke database mysql
 
