@@ -8,9 +8,24 @@
             title = models.CharField(max_length=200)
             body = models.TextField()
             created_at = models.DateTimeField(default = datetime.now, blank = True)
-            
+            class Meta:
+                verbose_name_plural = "Posts"
+
 2. migrate the model & create the posts table
     $ python manage.py makemigrations posts
     $ python manage.py migrate      // akan muncul table posts_posts
 
+3. register the model 
+    if you go to admin & login, you won't see posts admin
+    you have to register your posts model first!
+    so go to posts/admin.py
 
+        from django.contrib import admin
+        from .models import Posts
+
+        admin.site.register(Posts)
+
+4. run server, login & see your Posts model are there!
+    klik on Posts & try to add the data!
+
+///////////////////////////////////////
