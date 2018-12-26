@@ -1,0 +1,40 @@
+
+1. create apps
+    $ python manage.py startapp posts
+
+2. go to lin_django/settings.py & add a line to installed app
+
+    INSTALLED_APPS = [
+        'posts',
+        'django.contrib.admin',
+        'django.contrib.auth',
+        ...
+
+3. go to lin_django/urls.py & add line below:
+        
+        from django.contrib import admin
+        from django.urls import include, path
+
+        urlpatterns = [
+            path('posts/', include('posts.urls')),
+            path('admin/', admin.site.urls),
+        ]
+
+4. go to posts dir & create file urls.py with lines below:
+
+        from django.urls import path
+        from . import views
+
+        urlpatterns = [
+            path('', views.index, name='index'),
+        ]
+
+5. go to posts/views.py & write:
+
+        from django.http import HttpResponse
+
+        def index(request):
+            return HttpResponse("Selamat datang di posts!")
+
+6. run server!
+    $ python manage.py runserver
