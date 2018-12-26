@@ -52,3 +52,9 @@
 
 8. go to posts dir, create folder templates/posts/index.html!
     <h1>Test</h1>
+
+9. run server!
+    $ python manage.py runserver
+
+    try to get localhost:8000/posts
+    you'll see the index.html!
