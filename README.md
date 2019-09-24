@@ -2,6 +2,12 @@
 
 # 🐍 Django & MySQL
 
+- [x] Create Django project
+- [x] Connect to MySQL
+- [x] Setup a model
+
+> on progress...
+
 #### Lintang Wisesa :love_letter: _lintangwisesa@ymail.com_
 
 [Facebook](https://www.facebook.com/lintangbagus) | 
